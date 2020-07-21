@@ -6,7 +6,7 @@
             <router-link :to="'login'"  >Login</router-link>
         </div>
         <div class="links" v-if="$auth.check()">
-            <router-link :to="{ name : 'admin.index' }"  >Dashboard</router-link>
+            <router-link :to="{ name : 'admin.dashboard' }"  >Dashboard</router-link>
         </div>
     </div>
   </div>

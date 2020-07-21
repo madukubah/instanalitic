@@ -41,9 +41,11 @@ Vue.use(VueRouter)
 Vue.use(VueAxios, axios)
 axios.defaults.baseURL = `${process.env.MIX_APP_URL}/api/v1`
 Vue.use(VueAuth, auth)
-Vue.prototype.$appName = 'My App'
+Vue.prototype.$appName = 'Instanalitic'
 
 Vue.prototype.$baseUrl = process.env.MIX_APP_URL;
+
+Vue.component('pagination', require('laravel-vue-pagination'));
 
 // Load Index
 Vue.component('index', Index)

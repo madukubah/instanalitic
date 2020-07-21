@@ -111,8 +111,8 @@
                 roles : [],
                 page : "INDEX", // INDEX | DETAIL | EDIT | CREATE
                 form: new Form({
-                    'code': '',
-                    'name': ''
+                    'class': '',
+                    'values': ''
                 })
             }
 
@@ -128,7 +128,6 @@
 
         methods: {
             onSubmit(){
-                this.form.password_confirmation = this.form.password; // Temp for this form only.
                 this.form
                     .post('api/v1/roles')
                     .then( role => this.roles.push(role) );

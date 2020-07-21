@@ -19,5 +19,9 @@
       </div>
       <!-- Scripts -->
       <script src="{{ asset('js/app.js') }}" defer></script>
+      <!-- jQuery -->
+      <script src="{{url('adminlte/plugins/jquery/jquery.min.js')}}"></script>
+      <!-- Bootstrap 4 -->
+      <script src="{{url('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     </body>
 </html>

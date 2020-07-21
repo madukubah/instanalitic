@@ -44,4 +44,28 @@ Route::prefix('v1')->group(function () {
             Route::post('logout', 'AuthController@logout');
         });
     });
+
+    Route::middleware(['auth:api'])->group(function () {
+        Route::get('/sample_posts', 'Admin\SamplePostController@index');
+        Route::get('/sample_posts/count', 'Admin\SamplePostController@count');
+
+        Route::get('/words', 'Admin\WordCountController@index');
+        Route::get('/words/count', 'Admin\WordCountController@count');
+
+        Route::get('/posts', 'Admin\PostController@index');
+        Route::get('/posts/count', 'Admin\PostController@count');
+
+        Route::get('/accounts', 'Admin\AccountController@index');
+        Route::get('/accounts/count', 'Admin\AccountController@count');
+
+        Route::get('/sample_accounts', 'Admin\SampleAccountController@index');
+        Route::get('/sample_accounts/count', 'Admin\SampleAccountController@count');
+
+        Route::get('/cluster_words', 'Admin\ClusterWordController@index');
+        Route::get('/cluster_words/count', 'Admin\ClusterWordController@count');
+        Route::resource('/evaluations', 'Admin\EvaluationController');
+
+        Route::resource('/base_class', 'Admin\BaseClassController');
+        Route::resource('/temp_target', 'Admin\TempTargetController');
+    });
 });

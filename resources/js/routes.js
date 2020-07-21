@@ -49,10 +49,55 @@ let routes = [
             }
             ,
             {
-                path: 'roles',
-                name: 'admin.roles',
-                component: require('./views/roles').default
+                path: 'posts',
+                name: 'admin.posts',
+                component: require('./views/posts').default
+            },
+            {
+                path: 'sample_posts',
+                name: 'admin.sample_posts',
+                component: require('./views/sample_posts').default
+            },
+            {
+                path: 'corpus',
+                name: 'admin.corpus',
+                component: require('./views/corpus').default
+            },
+            {
+                path: 'cluster',
+                name: 'admin.cluster',
+                component: require('./views/cluster').default
+            },
+            {
+                path: 'evaluation',
+                name: 'admin.evaluation',
+                component: require('./views/evaluation').default
             }
+            ,
+            {
+                path: 'base_class',
+                name: 'admin.base_class',
+                component: require('./views/base_class').default
+            }
+            ,
+            {
+                path: 'ig_accounts',
+                name: 'admin.ig_accounts',
+                component: require('./views/ig_accounts').default
+            }
+            ,
+            {
+                path: 'sample_ig_accounts',
+                name: 'admin.sample_ig_accounts',
+                component: require('./views/sample_ig_accounts').default
+            }
+            ,
+            {
+                path: 'ig_accounts_target',
+                name: 'admin.ig_accounts_target',
+                component: require('./views/ig_accounts_target').default
+            }
+            
         ]
     },
 ];
