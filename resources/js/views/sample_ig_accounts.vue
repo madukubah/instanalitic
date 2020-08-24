@@ -124,7 +124,7 @@
                 this.page = "INDEX";
             },
             geAccounts( page = 1 ){
-            axios.get('accounts?page=' + page)
+            axios.get('sample_accounts?page=' + page)
                 .then((response) => 
                 {
                     // console.log( response.data );

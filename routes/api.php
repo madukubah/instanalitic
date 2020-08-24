@@ -67,5 +67,10 @@ Route::prefix('v1')->group(function () {
 
         Route::resource('/base_class', 'Admin\BaseClassController');
         Route::resource('/temp_target', 'Admin\TempTargetController');
+
+        Route::get('/account_tendencies', 'Admin\AccountTendencyController@index');
+        
+        Route::resource('/bots', 'Admin\BotController');
+
     });
 });

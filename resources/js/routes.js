@@ -97,6 +97,18 @@ let routes = [
                 name: 'admin.ig_accounts_target',
                 component: require('./views/ig_accounts_target').default
             }
+            ,
+            {
+                path: 'account_tendencies',
+                name: 'admin.account_tendencies',
+                component: require('./views/account_tendencies').default
+            }
+            ,
+            {
+                path: 'bots',
+                name: 'admin.bots',
+                component: require('./views/bots').default
+            }
             
         ]
     },

@@ -65,7 +65,8 @@
         <Menu></Menu>
         <div class="content">
             <div class="title m-b-md">
-                Laravel vue
+                Instanalitic
+                <!-- Analisis Karakteristik Pengguna Instagram Untuk Optimasi Bot Iklan Menggunakan Clustering K-Means dan Klasifikasi Cosine Similarity  -->
             </div>
         </div>
     </div>

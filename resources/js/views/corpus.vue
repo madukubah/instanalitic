@@ -6,6 +6,9 @@
                 <div class="row mb-2">
                     <div class="col-sm-6">
                         <h1 class="m-0 text-dark">Corpus</h1>
+                        <br>
+                        <button v-if='page == "WORD_CLOUD"' v-on:click="setTable()" type="button" class="btn btn-primary btn-sm pull-right">Table</button>
+                        <button v-if='page == "TABLE"' v-on:click="setWordCloud()" type="button" class="btn btn-primary btn-sm pull-right">Word Cloud</button>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
             </div><!-- /.container-fluid -->
@@ -15,7 +18,7 @@
         <!-- Main content -->
         <div class="content">
             <div class="container-fluid">
-                <wordcloud
+                <wordcloud v-if='page == "WORD_CLOUD"'
                     :data="words"
                     nameKey="value"
                     valueKey="count"
@@ -23,7 +26,7 @@
                     :showTooltip="true"
                     :wordClick="wordClickHandler">
                 </wordcloud>
-                <!-- <div>
+                <div v-if='page == "TABLE"' >
                      <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">Corpus</h3>
@@ -33,20 +36,22 @@
                             <table class="table table-hover">
                                 <thead>
                                 <tr>
+                                    <th>No</th>
                                     <th>Word</th>
                                     <th>Count</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr v-bind:key="index"  v-for="(word, index) in wordClouds">
-                                    <td>{{word.name}}</td>
+                                <tr v-bind:key="index"  v-for="(word, index) in words">
+                                    <td>{{index+1}}</td>
                                     <td>{{word.value}}</td>
+                                    <td>{{word.count}}</td>
                                 </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
-                </div> -->
+                </div>
 
             </div>
             <!-- /.container-fluid -->
@@ -67,7 +72,7 @@
             return {
                 words :[],
                 wordClouds :[],
-                // myColors: ['#1f77b4', '#629fc9', '#94bedb', '#c9e0ef'],
+                page : "TABLE", // TABLE | WORD_CLOUD
                 myColors: ['#1f77b4'],
             }
         },
@@ -81,6 +86,12 @@
         methods: {
             wordClickHandler(name, value, vm) {
                 console.log('wordClickHandler', name, value, vm);
+            },
+            setTable( ) {
+                    this.page = "TABLE";
+            },
+            setWordCloud( ) {
+                    this.page = "WORD_CLOUD";
             },
             getWords( page = 1 ){
             axios.get('words')

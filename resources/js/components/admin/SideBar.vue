@@ -42,6 +42,29 @@
                         <a href="javascript:" class="nav-link">
                             <i class="nav-icon fas fa-table"></i>
                             <p>
+                                Accounts
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview" >
+                            <li class="nav-item">
+                                <router-link tag="a" :to="{ name : 'admin.ig_accounts' }"  class="nav-link">
+                                    <i class="nav-icon fas fa-circle-o"></i>
+                                    <p>All Accounts</p>
+                                </router-link>
+                            </li>
+                            <li class="nav-item">
+                                <router-link tag="a" :to="{ name : 'admin.sample_ig_accounts' }"  class="nav-link">
+                                    <i class="nav-icon fas fa-circle-o"></i>
+                                    <p>Sample Accounts</p>
+                                </router-link>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-treeview menu-open">
+                        <a href="javascript:" class="nav-link">
+                            <i class="nav-icon fas fa-table"></i>
+                            <p>
                                 Posts
                                 <i class="fas fa-angle-left right"></i>
                             </p>
@@ -94,29 +117,6 @@
                         <a href="javascript:" class="nav-link">
                             <i class="nav-icon fas fa-table"></i>
                             <p>
-                                Accounts
-                                <i class="fas fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview" >
-                            <li class="nav-item">
-                                <router-link tag="a" :to="{ name : 'admin.ig_accounts' }"  class="nav-link">
-                                    <i class="nav-icon fas fa-circle-o"></i>
-                                    <p>All Accounts</p>
-                                </router-link>
-                            </li>
-                            <li class="nav-item">
-                                <router-link tag="a" :to="{ name : 'admin.sample_ig_accounts' }"  class="nav-link">
-                                    <i class="nav-icon fas fa-circle-o"></i>
-                                    <p>Sample Accounts</p>
-                                </router-link>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item has-treeview menu-open">
-                        <a href="javascript:" class="nav-link">
-                            <i class="nav-icon fas fa-table"></i>
-                            <p>
                                 Classification
                                 <i class="fas fa-angle-left right"></i>
                             </p>
@@ -135,12 +135,18 @@
                                 </router-link>
                             </li>
                             <li class="nav-item">
-                                <router-link tag="a" :to="{ name : 'admin.ig_accounts_target' }"  class="nav-link">
+                                <router-link tag="a" :to="{ name : 'admin.account_tendencies' }"  class="nav-link">
                                     <i class="nav-icon fas fa-circle-o"></i>
                                     <p>Account Tendency</p>
                                 </router-link>
                             </li>
                         </ul>
+                    </li>
+                    <li class="nav-item">
+                        <router-link tag="a" :to="{ name : 'admin.bots' }"  class="nav-link">
+                            <i class="nav-icon fas fa-cogs"></i>
+                            <p>Bot Setting</p>
+                        </router-link>
                     </li>
                     <!-- <li class="nav-item">
                         <router-link tag="a" :to="{ name : 'admin.users' }" class="nav-link">

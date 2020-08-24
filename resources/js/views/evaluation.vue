@@ -8,32 +8,29 @@
                         <h1 class="m-0 text-dark">Evaluation</h1>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
-            </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->
-
         <!-- Main content -->
         <div class="content">
             <div class="container-fluid">
-                <h3 class="m-0 text-dark">WSSE</h3>
+                <h3 class="m-0 text-dark">SSE</h3>
                 <line-chart2
                     v-if="loaded"
                     :chartdata="chartdataWsse"
                     :options="options"/>
                 <br>
-                <h3 class="m-0 text-dark">Evaluator</h3>
+                <!-- <h3 class="m-0 text-dark">Silhouette Coefficient</h3>
                 <line-chart
                     v-if="loaded"
                     :chartdata="chartdataEvaluator"
-                    :options="options"/>
-
+                    :options="options"/> -->
             </div>
             <!-- /.container-fluid -->
         </div>
         <!-- /.content -->
-
     </div>
-
 </template>
 
 <script>

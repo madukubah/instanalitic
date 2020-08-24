@@ -19,8 +19,7 @@
                     <div class="col-6"  v-bind:key="index"  v-for="(cluster, index) in clusters"  >
                         <div class="card" >
                             <div class="card-header">
-                                <h3 class="card-title">Cluster : {{ cluster.cluster }}</h3>
-
+                                <h3 class="card-title">Cluster : {{ cluster.cluster }} ( {{ cluster.count }} Posts )</h3>
                             </div>
                             <div class="card-body table-responsive p-0" style="height: 300px;" >
                                 <table class="table table-hover">
@@ -90,6 +89,7 @@
                         // console.log( ( wordCounts ) );
                         this.clusters.push({
                             cluster : item.cluster,
+                            count : item.count,
                             wordCounts : wordCounts
                         });
                     } );

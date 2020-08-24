@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Model\ClusterWord;
+use App\Model\SamplePost;
 
 
 class ClusterWordController extends Controller
@@ -16,7 +17,12 @@ class ClusterWordController extends Controller
      */
     public function index()
     {
-        return ClusterWord::orderBy("cluster", "desc")->get();//->links();
+        $clusters = ClusterWord::orderBy("cluster", "desc")->get();
+        foreach( $clusters as $cluster )
+        {
+            $cluster->count = SamplePost::where("cluster", $cluster->cluster )->count();
+        }
+        return $clusters ;
     }
 
     /**
