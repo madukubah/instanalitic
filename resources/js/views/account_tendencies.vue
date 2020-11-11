@@ -25,6 +25,7 @@
                             <table class="table table-hover">
                                 <thead>
                                 <tr>
+                                    <th>No</th>
                                     <th>Username</th>
                                     <th>Class</th>
                                     <th>Action</th>
@@ -32,6 +33,7 @@
                                 </thead>
                                 <tbody>
                                 <tr  v-bind:key="index"  v-for="(account, index) in accounts.data">
+                                    <td>{{index+1}}</td>
                                     <td>{{account.username}}</td>
                                     <td>{{account.class.class}}</td>
                                     <td>
@@ -147,6 +149,8 @@
                 {
                     _baseClasses[ this.accountDetail.tendencies[j].class ]++;
                     _sum ++;
+                    var num1 = Number( this.accountDetail.tendencies[j].value ) ;
+                    this.accountDetail.tendencies[j].value = num1.toPrecision(2);
                 }
 
                 var labels = [];
@@ -154,7 +158,6 @@
                 for(var key in _baseClasses) {
                     labels.push( key );
                     console.log( _sum * 100 );
-                    // data.push( _baseClasses[key]/_sum * 100 );
                     data.push( _baseClasses[key]/_sum * 100 );
                 }
 
@@ -163,11 +166,7 @@
                         {
                             label: 'Class',
                             borderColor: '#249EBF',
-                            // pointBackgroundColor: 'white',
-                            // borderWidth: 1,
-                            // pointBorderColor: '#249EBF',
                             backgroundColor: '#249EBF',
-                            // backgroundColor: '#f87979',
                             data: data
                         }
                     ];
@@ -176,17 +175,25 @@
                     scales: {
                         yAxes: [{
                             ticks: {
-                            beginAtZero: true
+                                beginAtZero: true
                             },
                             gridLines: {
-                            display: true
+                                display: true
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Percent (%)'
                             }
                         }],
                         xAxes: [ {
                             gridLines: {
                                 display: false
-                                }
-                            }]
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Class'
+                            }
+                        }]
                     },
                     legend: {
                         display: false

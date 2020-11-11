@@ -28,12 +28,14 @@
                             <table class="table table-hover">
                                 <thead>
                                 <tr>
+                                    <th>No</th>
                                     <th>Username</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr v-bind:key="index"  v-for="(account, index) in accounts.data">
+                                    <td>{{index+1}}</td>
                                     <td>{{account.username}}</td>
                                     <td>
                                         <button v-on:click="showDeleteModal( account )" type="button" class="btn btn-danger btn-sm pull-left">Delete</button>

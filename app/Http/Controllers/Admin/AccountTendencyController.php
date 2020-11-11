@@ -11,7 +11,7 @@ class AccountTendencyController extends Controller
 {
     public function index()
     {
-        return AccountAnalysis::with("tendencies", "class")->paginate(20);//->links();
+        return AccountAnalysis::with("tendencies", "class")->orderBy("username", "asc")->paginate(50);//->links();
     }
 
     public function getAll() 
